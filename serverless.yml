@@ -80,10 +80,10 @@ functions:
         - functions/hello/**
     events:
       - http:
-          path: /
+          path: /hello
           method: get
           integration: lambda-proxy
-          private: true
+#          private: true
           cors:
             origin: '*'
           authorizer:
