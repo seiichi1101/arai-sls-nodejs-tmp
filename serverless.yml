@@ -11,7 +11,7 @@
 #
 # Happy Coding!
 
-service: arai-nodejs-tmp # NOTE: update this with your service name
+service: arai-sls-nodejs-tmp # NOTE: update this with your service name
 
 # You can pin your service to only deploy with a specific Serverless version
 # Check out our docs for more details
@@ -20,17 +20,17 @@ service: arai-nodejs-tmp # NOTE: update this with your service name
 provider:
   name: aws
   runtime: nodejs6.10
-  apiKeys:
-    - myApiKey-${self:provider.stage}
+#  apiKeys:
+#    - myApiKey-${self:provider.stage}
 #    - ${env:MY_API_KEY} # you can hide it in a serverless variable
-  usagePlan:
-    quota:
-      limit: 5000
-      offset: 2
-      period: MONTH
-    throttle:
-      burstLimit: 200
-      rateLimit: 100
+#  usagePlan:
+#    quota:
+#      limit: 5000
+#      offset: 2
+#      period: MONTH
+#    throttle:
+#      burstLimit: 200
+#      rateLimit: 100
 # you can overwrite defaults here
   stage: test
   region: ap-northeast-1
@@ -94,8 +94,6 @@ functions:
             prarmeters:
               headers:
                 authorization: true
-              paths:
-                floorId: true
 #      - s3: ${env:BUCKET}
 #      - schedule: rate(10 minutes)
 #      - sns: greeter-topic
