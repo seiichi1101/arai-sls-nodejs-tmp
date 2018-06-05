@@ -32,7 +32,7 @@ provider:
 #      burstLimit: 200
 #      rateLimit: 100
 # you can overwrite defaults here
-  stage: test
+  stage: ${opt:stage, 'dev'}
   region: ap-northeast-1
 
 # you can add statements to the Lambda function's IAM Role here
